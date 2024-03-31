@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Social Media App</title>
   <link rel="stylesheet" href="styles.css">
+  <script>
+    function registerUser() {
+      var username = document.getElementById("username").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      
+      // Simple validation
+      if (!username || !email || !password) {
+        alert("Please fill in all fields");
+        return;
+      }
+      
+      // For demonstration purposes, log registration details to console
+      console.log("User registered:");
+      console.log("Username: " + username);
+      console.log("Email: " + email);
+      console.log("Password: " + password);
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -23,33 +42,31 @@
   
   <main>
     <div class="container">
+      <section class="registration">
+        <h2>Register</h2>
+        <form id="registration-form">
+          <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="button" onclick="registerUser()">Register</button>
+        </form>
+      </section>
+      
       <section class="feed">
-        <article class="post">
-          <div class="post-header">
-            <img src="user-avatar.jpg" alt="User Avatar">
-            <h2>Username</h2>
-          </div>
-          <div class="post-content">
-            <img src="post-image.jpg" alt="Post Image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="post-actions">
-            <button>Like</button>
-            <button>Comment</button>
-            <button>Share</button>
-          </div>
-        </article>
-        <!-- More posts go here -->
+        <!-- Existing feed section -->
       </section>
       
       <aside class="sidebar">
-        <h2>Trending Topics</h2>
-        <ul>
-          <li>#Topic1</li>
-          <li>#Topic2</li>
-          <li>#Topic3</li>
-          <!-- Additional trending topics -->
-        </ul>
+        <!-- Existing sidebar section -->
       </aside>
     </div>
   </main>
